@@ -111,8 +111,26 @@ Then open `http://localhost:8501`.
 | Trades | Full trade history |
 | Add Trade | Inserts a BUY/SELL trade; the `trg_update_holdings` trigger updates holdings automatically |
 
+### Portfolio Performance
+Shows ROI for each portfolio, calculated by the `portfolio_performance` view.
 ![Portfolio performance](docs/images/portfolio_performance.png)
+
+### Top Performing Stocks
+Ranks stocks by price increase, from the `top_performing_stocks` view.
+![Top performing stocks](docs/images/top_performing_stocks.png)
+
+### Trades
+Full transaction history, joined with portfolio and stock names.
 ![Trade history](docs/images/trades.png)
+
+### Add Trade
+Inserting a trade runs through the `trg_update_holdings` trigger, which updates `portfolio_holdings` automatically — no manual recalculation needed.
+
+**Before submitting:**
+![Add Trade form](docs/images/add_trade_before.png)
+
+**After submitting:**
+![Trade added successfully](docs/images/add_trade_after.png)
 
 All six front-end test cases (page loads, trade submission, trigger-driven holdings update) passed
 during testing.
