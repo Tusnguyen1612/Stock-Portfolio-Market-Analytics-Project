@@ -67,23 +67,6 @@ psql -d bench -f database/index_benchmark.sql
 Run each `EXPLAIN ANALYZE` a few times and take the median — the first run is slower due to a
 cold cache. **Only run this against a scratch database**: it inserts ~2 million synthetic rows.
 
-## Repository Structure
-
-```
-.
-├── database/
-│   ├── schema.sql              -- full DDL: tables, keys, functions, triggers, views, indexes
-│   └── index_benchmark.sql     -- scales data to 1M rows and benchmarks indexes with EXPLAIN ANALYZE
-├── app/                        -- Streamlit front end (see below)
-├── docs/
-│   └── images/                 -- ERD and app screenshots used in this README
-└── README.md
-```
-
-> The full `.backup` (schema + 300 rows of real Stooq price data) is not committed here — restore
-> it from the project's shared drive, or build an empty database from `schema.sql` and load your
-> own data.
-
 ## Tech Stack
 
 | Layer | Technology |
@@ -133,16 +116,6 @@ Then open `http://localhost:8501`.
 
 All six front-end test cases (page loads, trade submission, trigger-driven holdings update) passed
 during testing.
-
-## Design Notes
-
-- **Financial precision:** all currency fields use `NUMERIC(12,2)`/`NUMERIC(18,2)`, not `FLOAT`,
-  to avoid rounding errors.
-- **Referential integrity:** `ON DELETE CASCADE` for tightly-coupled data (e.g. a portfolio's
-  trades), `ON DELETE RESTRICT` for core reference data (e.g. a stock that has already been
-  traded).
-- **Derived data:** portfolio value and ROI are computed on demand from `trades` /
-  `portfolio_holdings` rather than stored, to avoid values going stale.
 
 ## License
 
