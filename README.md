@@ -113,18 +113,22 @@ Then open `http://localhost:8501`.
 
 ### Portfolio Performance
 Shows ROI for each portfolio, calculated by the `portfolio_performance` view.
+
 ![Portfolio performance](docs/images/portfolio_performance.png)
 
 ### Top Performing Stocks
 Ranks stocks by price increase, from the `top_performing_stocks` view.
+
 ![Top performing stocks](docs/images/top_performing_stocks.png)
 
 ### Trade history
 Full transaction history, joined with portfolio and stock names.
+
 ![Trade history](docs/images/trades.png)
 
 ### Add Trade
 Inserts a BUY/SELL trade. The `trg_update_holdings` trigger updates `portfolio_holdings` automatically.
+
 ![Add Trade form](docs/images/add_trade.png)
 
 All six front-end test cases (page loads, trade submission, trigger-driven holdings update) passed
