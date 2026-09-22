@@ -96,7 +96,7 @@ pip install -r requirements.txt
 createdb stock_portfolio
 pg_restore -d stock_portfolio database/mid_project_final.backup
 
-streamlit run app/app.py
+streamlit run app.py
 ```
 Then open `http://localhost:8501`.
 
