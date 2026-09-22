@@ -119,7 +119,7 @@ Shows ROI for each portfolio, calculated by the `portfolio_performance` view.
 Ranks stocks by price increase, from the `top_performing_stocks` view.
 ![Top performing stocks](docs/images/top_performing_stocks.png)
 
-### Trades
+### Trade history
 Full transaction history, joined with portfolio and stock names.
 ![Trade history](docs/images/trades.png)
 
