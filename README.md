@@ -61,7 +61,7 @@ rather than hidden, since it's a useful finding in its own right.
 Run it yourself:
 ```bash
 createdb bench
-pg_restore -d bench database/mid_project_final.backup   # or run database/schema.sql for schema only
+pg_restore -d bench database/stock_market.backup   # or run database/schema.sql for schema only
 psql -d bench -f database/index_benchmark.sql
 ```
 Run each `EXPLAIN ANALYZE` a few times and take the median — the first run is slower due to a
